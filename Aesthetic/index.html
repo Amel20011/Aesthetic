@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Irwan & Marnianti</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Particles Canvas -->
+    <canvas id="particlesCanvas"></canvas>
+    
+    <!-- Floating Flowers SVG -->
+    <div class="floating-flowers">
+        <svg class="flower flower-1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#c0cfe0" stroke-width="0.5" opacity="0.6"/>
+            <circle cx="50" cy="15" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="75" cy="25" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="85" cy="50" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="75" cy="75" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="50" cy="85" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="25" cy="75" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="15" cy="50" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="25" cy="25" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="50" cy="50" r="5" fill="#c0cfe0" opacity="0.7"/>
+        </svg>
+        
+        <svg class="flower flower-2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#c0cfe0" stroke-width="0.5" opacity="0.6"/>
+            <circle cx="50" cy="15" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="75" cy="25" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="85" cy="50" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="75" cy="75" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="50" cy="85" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="25" cy="75" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="15" cy="50" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="25" cy="25" r="8" fill="#c0cfe0" opacity="0.5"/>
+            <circle cx="50" cy="50" r="5" fill="#c0cfe0" opacity="0.7"/>
+        </svg>
+    </div>
+
+    <!-- COVER PAGE -->
+    <section class="cover" id="cover">
+        <div class="cover-content">
+            <div class="cover-header">
+                <p class="cover-label">– TAMU UNDANGAN –</p>
+                <h1 class="cover-title">THE WEDDING OF</h1>
+                <h2 class="cover-couple">Irwan & Marnianti</h2>
+            </div>
+
+            <div class="cover-guest">
+                <p>Kepada Yth. <span id="guestTitle">Bapak/Ibu/Saudara/i</span> <strong id="guestName">Tamu Undangan</strong></p>
+            </div>
+
+            <div class="cover-photo-frame">
+                <div class="glass-frame">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=450&fit=crop" alt="Foto Pernikahan" class="cover-photo">
+                </div>
+            </div>
+
+            <div class="cover-text">
+                <p>Dengan memohon rahmat dan ridha Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan putra kami.</p>
+            </div>
+
+            <button class="cover-btn" id="openBtn">
+                <span>Buka Undangan</span>
+                <div class="ripple"></div>
+            </button>
+        </div>
+
+        <!-- Falling Flowers Animation -->
+        <div class="falling-flowers" id="fallingFlowers"></div>
+    </section>
+
+    <!-- MAIN CONTENT (Hidden until button click) -->
+    <div id="mainContent" class="main-content hidden">
+        
+        <!-- SECTION 1: HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Irwan & Marnianti</h1>
+                <p class="hero-date">Ahad, 5 Juli 2026</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: MEMPELAI -->
+        <section class="mempelai">
+            <div class="section-container">
+                <h2 class="section-title">Kami Yang Berbahagia</h2>
+                
+                <div class="mempelai-grid">
+                    <!-- Mempelai Pria -->
+                    <div class="mempelai-card fade-up">
+                        <h3 class="mempelai-name">Irwan</h3>
+                        <p class="mempelai-role">Mempelai Pria</p>
+                        <div class="mempelai-parents">
+                            <p>Putra Pertama dari</p>
+                            <p class="mempelai-parent-name">Bapak Roi & Ibu Dama</p>
+                        </div>
+                    </div>
+
+                    <!-- Separator -->
+                    <div class="mempelai-separator fade-up">
+                        <div class="separator-line"></div>
+                        <span class="separator-text">~</span>
+                        <div class="separator-line"></div>
+                    </div>
+
+                    <!-- Mempelai Wanita -->
+                    <div class="mempelai-card fade-up">
+                        <h3 class="mempelai-name">Marnianti</h3>
+                        <p class="mempelai-role">Mempelai Wanita</p>
+                        <div class="mempelai-parents">
+                            <p>Putri dari</p>
+                            <p class="mempelai-parent-name">Bapak Jumarrang & Ibu Jumarni</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: KELUARGA -->
+        <section class="keluarga">
+            <div class="section-container">
+                <h2 class="section-title">Keluarga Mempelai Pria</h2>
+                
+                <div class="family-photo-wrapper fade-up">
+                    <div class="family-photo-frame">
+                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=450&fit=crop" alt="Keluarga Mempelai Pria" class="family-photo" id="familyPhoto">
+                    </div>
+                    <p class="photo-caption">Bapak Roi & Ibu Dama — Orang Tua Mempelai Pria</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: COUNTDOWN -->
+        <section class="countdown">
+            <div class="section-container">
+                <h2 class="section-title">Hitung Mundur</h2>
+                
+                <div class="countdown-grid fade-up">
+                    <div class="countdown-card">
+                        <div class="countdown-number" id="days">0</div>
+                        <p class="countdown-label">Hari</p>
+                    </div>
+                    <div class="countdown-card">
+                        <div class="countdown-number" id="hours">0</div>
+                        <p class="countdown-label">Jam</p>
+                    </div>
+                    <div class="countdown-card">
+                        <div class="countdown-number" id="minutes">0</div>
+                        <p class="countdown-label">Menit</p>
+                    </div>
+                    <div class="countdown-card">
+                        <div class="countdown-number" id="seconds">0</div>
+                        <p class="countdown-label">Detik</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: INFORMASI ACARA -->
+        <section class="informasi">
+            <div class="section-container">
+                <h2 class="section-title">Informasi Acara</h2>
+                
+                <div class="info-card fade-up">
+                    <div class="info-icon">📍</div>
+                    <h3 class="info-title">Akad Nikah</h3>
+                    <p class="info-date">Ahad, 5 Juli 2026</p>
+                    <p class="info-time">Waktu: 10.00 - selesai</p>
+                    <p class="info-location">Desa Batulappa, Dusun Patiorang, Kabupaten Pinrang</p>
+                    <a href="https://www.google.com/maps/search/Desa+Batulappa+Dusun+Patiorang+Kabupaten+Pinrang" target="_blank" class="info-btn">Lihat Lokasi</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: KISAH CINTA -->
+        <section class="kisah-cinta">
+            <div class="section-container">
+                <h2 class="section-title">Kisah Cinta</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-year">2020</p>
+                            <h3 class="timeline-title">Awal Bertemu</h3>
+                            <p class="timeline-description">Pertemuan pertama yang mengubah segalanya dan menciptakan ikatan indah</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-year">2022</p>
+                            <h3 class="timeline-title">Menjalin Hubungan</h3>
+                            <p class="timeline-description">Bersama dalam suka dan duka, saling mendukung dan memahami</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-year">2024</p>
+                            <h3 class="timeline-title">Lamaran</h3>
+                            <p class="timeline-description">Ikrar dan janji untuk membangun masa depan bersama</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-year">5 Juli 2026</p>
+                            <h3 class="timeline-title">Hari Paling Bahagia</h3>
+                            <p class="timeline-description">Pernikahan yang menyatukan dua hati dan keluarga</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: RSVP -->
+        <section class="rsvp">
+            <div class="section-container">
+                <h2 class="section-title">RSVP</h2>
+                
+                <div class="rsvp-form fade-up">
+                    <input type="text" id="rsvpName" placeholder="Nama Lengkap Anda" class="rsvp-input">
+                    
+                    <div class="rsvp-toggle">
+                        <label class="toggle-btn">
+                            <input type="radio" name="attendance" value="Hadir" checked>
+                            <span>Hadir</span>
+                        </label>
+                        <label class="toggle-btn">
+                            <input type="radio" name="attendance" value="Tidak Hadir">
+                            <span>Tidak Hadir</span>
+                        </label>
+                    </div>
+
+                    <textarea id="rsvpMessage" placeholder="Ucapan & Doa untuk pengantin..." class="rsvp-textarea"></textarea>
+                    
+                    <button type="submit" class="rsvp-btn" id="rsvpBtn">Kirim Ucapan</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: UCAPAN & DOA -->
+        <section class="ucapan">
+            <div class="section-container">
+                <h2 class="section-title">Ucapan & Doa</h2>
+                
+                <div class="ucapan-feed" id="ucapanFeed">
+                    <!-- Ucapan akan ditampilkan di sini -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: PENUTUP -->
+        <section class="penutup">
+            <div class="section-container">
+                <div class="penutup-content">
+                    <p class="penutup-quote">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kami.</p>
+                    
+                    <p class="penutup-couples">Kami yang berbahagia</p>
+                    <p class="penutup-names">Irwan & Marnianti</p>
+                    
+                    <p class="penutup-closing">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Music Button -->
+    <button class="music-btn" id="musicBtn" title="Musik">
+        <span class="music-icon">♪</span>
+    </button>
+
+    <!-- Audio -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Lightbox for Family Photo -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-overlay" id="lightboxOverlay"></div>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
